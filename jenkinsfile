@@ -1,0 +1,25 @@
+pipeline{
+    agent any
+    stages{
+        stage("one"){
+            steps{
+                echo "Hello"
+            }
+        }
+         stage("Two"){
+            when{
+                expression{
+                return false
+                }
+            }
+             steps{
+                echo "world"
+            }
+        }
+        stage("Three"){
+            steps{
+             echo "welcome"
+             }
+        }
+    }
+}
